@@ -1,8 +1,9 @@
-import { Worker } from 'node:worker_threads';
-import { join } from 'node:path';
 import os from 'node:os';
+import { Worker } from 'node:worker_threads';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const __dirname = import.meta.dirname;
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const STARTED_INDEX = 10;
 const WORKER_FILE = 'worker.js';

@@ -1,11 +1,12 @@
-import { sep, join } from 'node:path';
-import { release, version } from 'node:os';
-import { createServer as createServerHttp } from 'node:http';
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { release, version } from 'node:os';
+import { sep, join, dirname } from 'node:path';
+import { createServer as createServerHttp } from 'node:http';
 import './files/c.js';
 
-const __filename = import.meta.filename;
-const __dirname = import.meta.dirname;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const random = Math.random();
 
